@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PhishGuard Edu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER (Sama seperti index.html) -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">PhishGuard.Edu</a>
+            </div>
+            <div class="menu">
+                <a href="index.html">Beranda</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#">Modul</a>
+                <a href="login.html">Masuk</a>
+            </div>
+            <a href="login.html" class="btn">Mulai Latihan</a>
+        </nav>
+    </header>
+
+    <!-- MAIN DASHBOARD -->
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">Dashboard Admin</h1>
+            <a href="index.html" class="btn" style="background-color: #d9534f; color: white;">Logout</a>
+        </div>
+
+        <!-- SECTION 1: CRUD MODUL EDUKASI -->
+        <section class="table-container">
+            <h2 style="color: #25c7f7; font-size: 18px;">Manajemen Modul Edukasi</h2>
+            
+            <!-- Form Tambah Data -->
+            <div class="form-group" style="margin-top: 15px;">
+                <input type="text" id="modulTitle" placeholder="Judul Modul">
+                <input type="text" id="modulCategory" placeholder="Kategori (Dasar/Lanjutan)">
+                <button class="btn-add" onclick="tambahModul()">Tambah Modul</button>
+            </div>
+
+            <!-- Tabel Data -->
+            <table id="tabelModul">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Judul Modul</th>
+                        <th>Kategori</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 2: CRUD RIWAYAT SIMULASI -->
+        <section class="table-container">
+            <h2 style="color: #25c7f7; font-size: 18px;">Riwayat Simulasi Phishing</h2>
+            
+            <div class="form-group" style="margin-top: 15px;">
+                <input type="text" id="simEmail" placeholder="Email Pengguna">
+                <select id="simStatus">
+                    <option value="Lulus">Lulus</option>
+                    <option value="Gagal">Gagal</option>
+                </select>
+                <button class="btn-add" onclick="tambahSimulasi()">Tambah Riwayat</button>
+            </div>
+
+            <table id="tabelSimulasi">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PhishGuard Edu. Media Edukasi Keamanan Siber.</p>
+    </footer>
+
+    <!-- Menghubungkan ke JavaScript -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
